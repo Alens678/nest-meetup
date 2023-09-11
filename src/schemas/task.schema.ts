@@ -19,7 +19,7 @@ export class Task {
   description: string;
 
   @Prop({ required: true, enum: StatusEnum }) // Use the enum you defined
-  status: StatusEnum;
+  status: StatusEnum.TODO;
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);

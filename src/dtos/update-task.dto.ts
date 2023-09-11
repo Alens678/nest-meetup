@@ -7,5 +7,5 @@ export class UpdateTaskDto {
 
   //se define un valor como default
   @IsEnum(StatusEnum) // Ensure that the value is one of the enum values
-  status: StatusEnum = StatusEnum.TODO; // Set the default status
+  status: StatusEnum;
 }

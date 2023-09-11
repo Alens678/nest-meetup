@@ -3,11 +3,10 @@ import {
   Get,
   Post,
   Body,
-  Patch,
+  Put,
   Param,
   NotFoundException,
   Delete,
-  Query,
   //   Delete,
 } from '@nestjs/common';
 import { TaskService } from '../services/task.service';
@@ -38,14 +37,11 @@ export class TaskController {
     }
   }
 
-  @Patch(':id')
+  @Put(':id')
   async update(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
-    try {
-      const task = await this.taskService.update(id, updateTaskDto);
-      return task;
-    } catch (error) {
-      throw new NotFoundException(`Task with ID ${id} not found`);
-    }
+    const updatedTask = await this.taskService.update(id, updateTaskDto);
+    if (!updatedTask) throw new NotFoundException('Project not found');
+    return updatedTask;
   }
 
   @Delete(':id')

@@ -32,19 +32,14 @@ export class TaskService {
   }
 
   async update(id: string, updateTaskDto: UpdateTaskDto) {
-    try {
-      const task = await this.taskModel.findByIdAndUpdate(id, updateTaskDto, {
+    const updatedTask = await this.taskModel.findByIdAndUpdate(
+      id,
+      updateTaskDto,
+      {
         new: true,
-      });
-
-      if (!task) {
-        throw new NotFoundException(`Task with ID ${id} not found`);
-      }
-
-      return task;
-    } catch (error) {
-      throw new NotFoundException(`Task with ID ${id} not found`);
-    }
+      },
+    );
+    return updatedTask;
   }
 
   async deleteTask(id: string) {
