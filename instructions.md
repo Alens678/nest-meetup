@@ -75,7 +75,18 @@ Con Mongoose, todo se deriva de un esquema. Cada esquema se asigna a una colecci
 
 Los esquemas se pueden crear con decoradores NestJS o con la propia Mongoose manualmente. El uso de decoradores para crear esquemas reduce en gran medida el texto repetitivo y mejora la legibilidad general del código.
 
-    5.1 Creemos un esquema para las tareas, lo llamaremos task.
+Creemos un esquema para las tareas, lo llamaremos task:
+1- Creamos la carpeta "task" y luego creamos el archivo "task.schema.ts"
+-usar el ejemplo de la documentacion y modificar basandonos en el archivo de este repo.
+
+Siguiendo con la documentacion, necesitamos crear un Modulo para Task.
+usamos el comando "nest g module task"
+
+Realizamos el import del schema de Task al modulo (seguimos pasos de nuestro codigo)
+
+Seguido a esto, segun la documentacion pasamos a realizar nuestro Controller y nuestro Servicio. Comenzando con el controller y luego el servicio.
+"nest g controller task" y "nest g service task"
+
     5.2 Creemos el dto para crear una tarea.
     Para esto instalaremos <npm install class-validator class-transformer --save-dev> como dependencia de desarrollo, esta dependencia, nos permitirá crear las validaciones correspondientes a cada campo de nuestra tabla en la base de datos.
     Configuramos el estado de las tareas como un enum con 3 opciones, y le asignamos un valor default al momento de crear una nueva tarea por medio del dto.
