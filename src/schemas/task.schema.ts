@@ -5,7 +5,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 export type UserDocument = HydratedDocument<Task>;
 
 export enum StatusEnum {
-  TODO = 'todo',
+  TODO = 'to_do',
   IN_PROGRESS = 'in_progress',
   DONE = 'done',
 }

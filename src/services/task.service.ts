@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateTaskDto } from '../dtos/create-task.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -14,5 +14,19 @@ export class TaskService {
 
   async getAll(): Promise<Task[]> {
     return this.taskModel.find().exec(); // Use findAll() or find() to retrieve all records
+  }
+
+  async getOne(id: string) {
+    try {
+      const task = await this.taskModel.findById(id).exec();
+
+      if (!task) {
+        throw new NotFoundException(`Task with ID ${id} not found`);
+      }
+
+      return task;
+    } catch (error) {
+      throw new NotFoundException(`Task with ID ${id} not found`);
+    }
   }
 }

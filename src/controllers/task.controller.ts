@@ -4,7 +4,8 @@ import {
   Post,
   Body,
   //   Patch,
-  //   Param,
+  Param,
+  NotFoundException,
   //   Delete,
 } from '@nestjs/common';
 import { TaskService } from '../services/task.service';
@@ -22,5 +23,15 @@ export class TaskController {
   @Get()
   async getAll() {
     return this.taskService.getAll();
+  }
+
+  @Get(':id')
+  async getOne(@Param('id') id: string) {
+    try {
+      const task = await this.taskService.getOne(id);
+      return task;
+    } catch (error) {
+      throw new NotFoundException(`Task with ID ${id} not found`);
+    }
   }
 }

@@ -11,7 +11,7 @@ El framework nos preguntará que package manager queremos usar antes de completa
     
 El proceso para configurar el template, tardará un par de segundos, es totalmente normal. Por favor quienes completen la instalación van poniendo check verde para saber que estamos en el mismo punto.
 
-La estructura inicial del proyecto contiene:
+## La estructura inicial del proyecto contiene:
 ** Un directorio test, pues ya incluye el framework de testing Jest, de igual manera, aqui se crean y almacenan todos los test que se crearan.
 
 ** El framework, contiene unas configuraciones de eslint y prettier iniciales para conservar un codigo más limpio. Estas configuraciones también podemos modificarlas segun nuestras preferencias. Dado que el tiempo es limitado, este es un punto que les inivitamos a investigar un poco, pues es uuna muy buena practica a la hora de trabajar en equipos, nos aseguramos de escribir todos bajo las mismas reglas y estandares.
