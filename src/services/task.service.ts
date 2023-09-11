@@ -29,4 +29,14 @@ export class TaskService {
       throw new NotFoundException(`Task with ID ${id} not found`);
     }
   }
+
+  async deleteTask(id: string) {
+    try {
+      const task = await this.taskModel.findById(id).exec();
+      await this.taskModel.deleteOne({ _id: id });
+      return `The ${task.name} has been deleted`;
+    } catch (error) {
+      throw new NotFoundException(`Task with ID ${id} not found`);
+    }
+  }
 }
