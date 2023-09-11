@@ -6,6 +6,8 @@ import {
   Patch,
   Param,
   NotFoundException,
+  Delete,
+  Query,
   //   Delete,
 } from '@nestjs/common';
 import { TaskService } from '../services/task.service';
@@ -44,5 +46,10 @@ export class TaskController {
     } catch (error) {
       throw new NotFoundException(`Task with ID ${id} not found`);
     }
+  }
+
+  @Delete(':id')
+  async deleteTask(@Param('id') id: string) {
+    return this.taskService.deleteTask(id);
   }
 }
