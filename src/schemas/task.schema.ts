@@ -18,8 +18,8 @@ export class Task {
   @Prop({ required: true })
   description: string;
 
-  @Prop({ required: true, enum: StatusEnum }) // Use the enum you defined
-  status: StatusEnum.TODO;
+  @Prop({ required: true, enum: StatusEnum, default: StatusEnum.TODO }) // Use the enum you defined
+  status: StatusEnum;
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);

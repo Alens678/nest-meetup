@@ -1,5 +1,4 @@
-import { IsEnum, IsNotEmpty, IsString } from 'class-validator';
-import { StatusEnum } from 'src/schemas/task.schema';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateTaskDto {
   @IsString()
@@ -8,8 +7,4 @@ export class CreateTaskDto {
 
   @IsString()
   description: string;
-
-  //se define un valor como default
-  @IsEnum(StatusEnum) // Ensure that the value is one of the enum values
-  status: StatusEnum = StatusEnum.TODO; // Set the default status
 }
