@@ -47,7 +47,7 @@ app.service.ts A basic service with a single method.
 Con el comando <npm run start> iniciamos el servidor y podremos confirmar que todo se ha instalado correctamente. <npm run start:dev> nos permitirá correr el servidor en modo watch, lo que significa que actualizara los cambios aplicados automaticamente, sin necesidad de detenerlo.
 No dirijimos al navegador y abrimos el localhost en el puerto 3000. Podremos observar un hello world, lo que indica que el servidor esta corriendo de manera adecuada.
 
-## 5. Conecatando a la base de datos
+## 5. Conectando a la base de datos
 
 Para conctar la base de datos usaremos MongoDB como nuestra base de datos de ejemplo, podemos verificar la informacion en la documentacion para seguir paso a paso la coneccion:
 https://docs.nestjs.com/techniques/mongodb#model-injection
@@ -90,5 +90,8 @@ Seguido a esto, segun la documentacion pasamos a realizar nuestro Controller y n
     5.2 Creemos el dto para crear una tarea.
     Para esto instalaremos <npm install class-validator class-transformer --save-dev> como dependencia de desarrollo, esta dependencia, nos permitirá crear las validaciones correspondientes a cada campo de nuestra tabla en la base de datos.
     Configuramos el estado de las tareas como un enum con 3 opciones, y le asignamos un valor default al momento de crear una nueva tarea por medio del dto.
-    5.3 creamos el task.module
-    5.4 creamos el task.service
+    5.3 creamos el task.module npm nest g module task
+    5.4 creamos el task.service npm nest g s task
+    5.4 creamos el task.controller npm nest c s task
+
+
